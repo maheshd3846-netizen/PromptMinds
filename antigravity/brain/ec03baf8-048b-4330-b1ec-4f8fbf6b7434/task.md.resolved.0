@@ -1,0 +1,21 @@
+# PromptMind Implementation Tasks
+
+- [ ] Planning
+  - [ ] Create implementation plan
+- [ ] Backend Setup
+  - [ ] Create `package.json`
+  - [ ] Implement `server.js` with Express and OpenAI integration
+  - [ ] Create `.env` placeholder
+- [ ] Frontend Structure and Styling
+  - [ ] Implement `public/index.html` structure
+  - [ ] Implement `public/style.css` (Cyberpunk UI, neon glow, animations)
+- [ ] Frontend Core Logic
+  - [ ] Implement `public/script.js` (API calls, UI updates)
+  - [ ] Implement SpeechRecognition (voice input)
+  - [ ] Implement Chatbot UI (typing animations)
+- [ ] Frontend 3D & Advanced Visuals
+  - [ ] Integrate Three.js 3D Brain visualization
+  - [ ] Implement Prompt Heatmap logic
+  - [ ] Implement Prompt Evolution feature UI updates
+- [ ] Verification
+  - [ ] Test application locally

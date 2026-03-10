@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptMind - AI That Teaches Humans How To Think Like AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Neural Network Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- UI Overlay container -->
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="cyber-header">
+            <div class="logo">
+                <i class="fa-solid fa-brain"></i>
+                <h1><span class="neon-text">PROMPT</span>MIND</h1>
+            </div>
+            <p class="tagline">AI THAT TEACHES HUMANS HOW TO THINK</p>
+        </header>
+
+        <main class="dashboard-grid">
+            
+            <!-- LEFT COLUMN: Input & Chat -->
+            <section class="panel chat-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-terminal"></i> Neural Interface</h2>
+                    <div class="status-indicator online"></div>
+                </div>
+                
+                <div class="chat-history" id="chat-history">
+                    <div class="message ai-message">
+                        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="content typing-indicator">
+                            <p>System initialized. Awaiting user input. Type a prompt below or use voice command to begin evaluation sequence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <textarea id="prompt-input" placeholder="Initiate prompt sequence here..." rows="3"></textarea>
+                    <div class="input-controls">
+                        <button id="voice-btn" class="cyber-btn icon-btn" title="Voice Input"><i class="fa-solid fa-microphone"></i></button>
+                        <button id="submit-btn" class="cyber-btn primary-btn">TRANSMIT <i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT COLUMN: Dashboard Analysis -->
+            <aside class="panel analysis-panel">
+                
+                <!-- Intelligence Meter -->
+                <div class="gadget score-gadget">
+                    <h3><i class="fa-solid fa-gauge-high"></i> Prompt Intelligence</h3>
+                    <div class="meter-wrapper">
+                        <div class="meter-track">
+                            <div class="meter-fill" id="score-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="score-display">
+                            <span id="score-text">0</span><span class="max-score">/100</span>
+                        </div>
+                    </div>
+                    <p id="score-feedback" class="feedback-text muted">Awaiting neural scan...</p>
+                </div>
+
+                <!-- Word Heatmap -->
+                <div class="gadget heatmap-gadget">
+                    <h3><i class="fa-solid fa-fire"></i> Lexical Heatmap</h3>
+                    <div class="heatmap-container" id="heatmap-container">
+                        <span class="placeholder-text">Prompt will be mapped here. Green = Strong, Red = Weak.</span>
+                    </div>
+                </div>
+
+                <!-- Evolution Section -->
+                <div class="gadget evolution-gadget">
+                    <h3><i class="fa-solid fa-dna"></i> Prompt Evolution</h3>
+                    
+                    <div class="evolution-stage original-stage">
+                        <span class="stage-label">v1.0.alpha [ORIGINAL]</span>
+                        <p id="evolve-original" class="evolve-text empty">...</p>
+                    </div>
+
+                    <div class="evolution-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+                    <div class="evolution-stage improved-stage">
+                        <span class="stage-label">v2.0.beta [IMPROVED]</span>
+                        <p id="evolve-improved" class="evolve-text empty">...</p>
+                    </div>
+
+                    <div class="evolution-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+                    <div class="evolution-stage expert-stage">
+                        <span class="stage-label">v3.0.omega [EXPERT]</span>
+                        <p id="evolve-expert" class="evolve-text empty">...</p>
+                    </div>
+                </div>
+
+            </aside>
+        </main>
+
+        <!-- Loading overlay -->
+        <div id="loading-overlay" class="hidden">
+            <div class="spinner"></div>
+            <p class="scanning-text">Analyzing neural pathways...</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

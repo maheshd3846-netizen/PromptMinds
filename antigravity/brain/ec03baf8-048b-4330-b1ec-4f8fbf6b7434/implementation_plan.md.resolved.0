@@ -1,0 +1,35 @@
+# PromptMind
+
+An AI that teaches humans how to think like AI. A futuristic, cyberpunk-themed web application that analyzes user prompts, provides scores, and suggests improvements.
+
+## Proposed Changes
+
+### Backend Setup
+#### [NEW] promptmind/package.json
+Initialize Node.js project with dependencies (`express`, `dotenv`, `cors`, `openai`).
+#### [NEW] promptmind/server.js
+Create an Express server. Implement POST `/analyze` endpoint that calls the OpenAI API to analyze the prompt out of 100, suggest improvements, provide a chatbot response, and generate heatmaps based on the prompt's strong and weak words.
+#### [NEW] promptmind/.env
+Placeholder for `OPENAI_API_KEY`.
+
+### Frontend Setup
+#### [NEW] promptmind/public/index.html
+The main HTML file containing the structure for the cyberpunk dashboard, 3D visualization container, chatbot interface, prompt intelligence meter, prompt heatmap, and prompt evolution feature. Load Three.js from a CDN.
+#### [NEW] promptmind/public/style.css
+A dark, futuristic theme with neon glows, animated backgrounds (moving nodes), smooth transitions, glassmorphism panels, and glowing text.
+#### [NEW] promptmind/public/script.js
+Contains all frontend logic:
+- Handle prompt submission and API calls to `/analyze`.
+- Implement SpeechRecognition API for voice input.
+- Typing animation for AI responses.
+- Update UI elements (intelligence meter, heatmap, evolution stages).
+- Implement a 3D neural network/brain simulation using Three.js inside the visualization container.
+
+## Verification Plan
+### Manual Verification
+- Run `npm install` and `node server.js`.
+- Open browser and verify UI renders perfectly.
+- Provide OpenAI API Key.
+- Test text submission and verify backend response.
+- Test voice submission API if browser supports it.
+- Ensure the 3D visualization and other animated elements do not block UI interaction.

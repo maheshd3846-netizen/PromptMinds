@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Updated the PromptMind walkthrough to instruct the user to configure a Gemini API key instead of OpenAI.",
+  "updatedAt":  "2026-03-05T06:20:17.088134100Z",
+  "version":  "1"
+}

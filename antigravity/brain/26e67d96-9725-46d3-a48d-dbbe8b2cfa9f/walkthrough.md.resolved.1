@@ -1,0 +1,36 @@
+# PromptMind Walkthrough
+
+The PromptMind application has been successfully built and is ready to run! It features a fully-realized Cyberpunk UI, an interactive 3D AI Brain visualization, and seamless integration with the OpenAI API for prompt analysis.
+
+## Features Implemented
+
+- **Sci-Fi Cyberpunk UI**: Built with a sleek dark theme, neon glowing accents (`#00ffcc` and `#ff0055`), glassmorphism panels, and a custom `Inter` / `Share Tech Mono` font stack.
+- **Three.js Neural Network**: A dynamic, rotating 3D particle system that represents an AI "brain," with nodes that connect and form neural pathways in real-time. The brain visually spikes in activity when processing prompts.
+- **Neural Interface (Chatbot)**: A ChatGPT-like interface with a typing effect for AI responses.
+- **Voice Prompt Input**: Integrated the browser `SpeechRecognition` API, allowing you to click the microphone icon and speak your prompt directly.
+- **Prompt Intelligence Meter**: A dynamic, animated dashboard dial that evaluates the prompt's quality (Clarity, Specificity, Structure, Context, and Instruction Strength) returning a color-coded score out of 100.
+- **Lexical Heatmap**: Parses the prompt and visually highlights "strong" words (green) and "weak/vague" words (red) to help the user understand how the AI parses language.
+- **Prompt Evolution Section**: Automatically generates and displays an *Improved* and an *Expert* version of your original prompt based on Gemini's advanced reasoning.
+- **Secure Backend API**: A robust Node.js + Express backend that securely holds your `GEMINI_API_KEY` in a [.env](file:///C:/Users/Laptop-PC/.gemini/antigravity/scratch/promptmind/.env) file and processes completions using `gemini-2.5-flash`.
+
+## How to Run
+
+1. Open your terminal and navigate to the project folder:
+   ```bash
+   cd C:\Users\Laptop-PC\.gemini\antigravity\scratch\promptmind
+   ```
+
+2. Add your Gemini API key to the [.env](file:///C:/Users/Laptop-PC/.gemini/antigravity/scratch/promptmind/.env) file. You can replace the placeholder inside [promptmind/.env](file:///C:/Users/Laptop-PC/.gemini/antigravity/scratch/promptmind/.env):
+   ```bash
+   GEMINI_API_KEY=your-gemini-key-here
+   ```
+
+3. Ensure dependencies are installed and start the server:
+   ```bash
+   npm install
+   node server.js
+   ```
+
+4. Open your browser and go to http://localhost:3000
+
+*The server should currently be running via the assistant's test execution!*

@@ -1,0 +1,24 @@
+# PromptMind Complete Walkthrough
+
+The PromptMind project is fully functional and ready to use! As requested, it's built with Gemini instead of OpenAI, and the files have been strategically renamed.
+
+## Changes Made
+- **File Structure Updates:**
+  - [promptmind/api.js](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/shadow-astro/promptmind/api.js) (formerly `server.js`) handles server endpoints and Gemini API calls.
+  - [promptmind/ui/dashboard.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/shadow-astro/promptmind/ui/dashboard.html) (formerly `public/index.html`).
+  - [promptmind/ui/theme.css](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/shadow-astro/promptmind/ui/theme.css) (formerly `public/style.css`).
+  - [promptmind/ui/main.js](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/shadow-astro/promptmind/ui/main.js) (formerly `public/script.js`).
+- Installed `@google/genai` explicitly, configured to use GEMINI_API_KEY.
+- Created beautiful 3-D visualization graphics with `Three.js`.
+- Implemented typing indicators, the intelligence meter score SVG, and Prompt Heatmaps matching user criteria exactly (strong vs weak words).
+- Built a voice-recognition UI layer matching the Web Speech API interface specifications.
+- Styled completely with absolute minimal-futuristic cyberpunk design elements (Neon gradients, custom fonts: Orbitron & Rajdhani, Glassmorphic overlays with glow).
+
+## How to Test
+1. Navigate to your project folder using a separate terminal window:
+   `cd c:\Users\Laptop-PC\.gemini\antigravity\playground\shadow-astro\promptmind`
+2. Update the [.env](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/shadow-astro/promptmind/.env) file with your actual Gemini API key:
+   `GEMINI_API_KEY="your-real-key-here"`
+3. Start the server:
+   `npm start` or `node api.js`
+4. Open your browser and navigate to `http://localhost:3000`. You will be greeted by the 3D Neural Link. Try typing a simple prompt, or voice recording, and observe the analysis engine.

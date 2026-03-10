@@ -1,0 +1,18 @@
+# PromptMind Implementation Task List
+
+- [ ] Project Setup
+  - [ ] Initialize `package.json` with dependencies (`express`, `cors`, `dotenv`, `openai`)
+  - [ ] Create `.env` template
+- [ ] Backend Implementation
+  - [ ] Set up Express server in `server.js` with static file serving
+  - [ ] Create `POST /analyze` endpoint
+  - [ ] Integrate OpenAI API for prompt analysis, scoring, and rewritten variants
+- [ ] Frontend Foundation & Styling
+  - [ ] Structure `public/index.html` (dashboard panels, chat, text input, canvas)
+  - [ ] Implement `public/style.css` (cyberpunk theme, grid background, glowing cards)
+- [ ] Frontend Logic & Interactivity
+  - [ ] `public/script.js`: Handle Three.js setup (rotating brain/neural net)
+  - [ ] Implement SpeechRecognition for voice input
+  - [ ] Implement form submission and text streaming/typing animation
+  - [ ] Visualize analysis results (Heatmap highlighting, intelligence meter)
+  - [ ] Update Prompt Evolution UI (Original $\rightarrow$ Improved $\rightarrow$ Expert)

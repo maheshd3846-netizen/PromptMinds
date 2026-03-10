@@ -1,0 +1,6 @@
+node_modules/
+.env
+antigravity-browser-profile/
+test-results/
+.ipynb_checkpoints/
+__pycache__/
