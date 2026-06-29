@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Three.js for 3D Background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
+
 <body>
     <!-- 3D Neural Background -->
     <canvas id="bg-canvas"></canvas>
 
     <div class="app-container">
-        
+
         <!-- Header -->
         <header class="cyber-header">
             <div class="header-left">
@@ -37,7 +40,8 @@
             </nav>
 
             <div class="header-right">
-                <div class="user-greeting" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--border-color); text-transform: uppercase; margin-right: 1.5rem; text-shadow: var(--neon-glow); display: flex; align-items: center; gap: 0.4rem;">
+                <div class="user-greeting"
+                    style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--border-color); text-transform: uppercase; margin-right: 1.5rem; text-shadow: var(--neon-glow); display: flex; align-items: center; gap: 0.4rem;">
                     <i class="fa-solid fa-fingerprint"></i> UPLINK: <span id="user-nickname">GUEST</span>
                 </div>
                 <div class="rank-hud" id="rank-hud" title="Your Prompt Architect Rank">
@@ -47,7 +51,8 @@
                     <button id="synth-sound-btn" class="cyber-btn icon-btn active" title="Toggle Synth Sound Effects">
                         <i class="fa-solid fa-volume-high"></i>
                     </button>
-                    <button id="drone-toggle-btn" class="cyber-btn icon-btn" title="Toggle Cyberpunk Ambient Pad & Chords Synthesizer">
+                    <button id="drone-toggle-btn" class="cyber-btn icon-btn"
+                        title="Toggle Cyberpunk Ambient Pad & Chords Synthesizer">
                         <i class="fa-solid fa-wave-square"></i>
                     </button>
                     <button id="ui-scale-btn" class="cyber-btn icon-btn" title="Toggle UI Scale (Normal/Large)">
@@ -58,7 +63,7 @@
         </header>
 
         <main class="dashboard-grid">
-            
+
             <!-- LEFT PANEL: Model Directories & Details -->
             <section class="panel analysis-panel" style="overflow-y: auto;">
                 <div class="panel-header">
@@ -69,7 +74,8 @@
                     <!-- Engine 1: Gemini Pro -->
                     <div class="engine-spec-card">
                         <div class="engine-spec-header">
-                            <span class="engine-title"><i class="fa-solid fa-brain" style="color: #4285f4;"></i> GEMINI PRO</span>
+                            <span class="engine-title"><i class="fa-solid fa-brain" style="color: #4285f4;"></i> GEMINI
+                                PRO</span>
                             <span class="engine-tag tag-blue">INTELLIGENT REASONING CORE</span>
                         </div>
                         <div class="engine-spec-body">
@@ -87,7 +93,8 @@
                             </div>
                             <div class="engine-pro-con">
                                 <div class="pro-col">
-                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i> Core Strengths</span>
+                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i>
+                                        Core Strengths</span>
                                     <ul>
                                         <li>Exceptional logical deduction reasoning</li>
                                         <li>High compliance with massive structural formats</li>
@@ -95,7 +102,8 @@
                                     </ul>
                                 </div>
                                 <div class="con-col">
-                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i> Constraints</span>
+                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i>
+                                        Constraints</span>
                                     <ul>
                                         <li>Slight latency overhead on massive tokens</li>
                                     </ul>
@@ -107,7 +115,8 @@
                     <!-- Engine 2: Gemini Flash -->
                     <div class="engine-spec-card">
                         <div class="engine-spec-header">
-                            <span class="engine-title"><i class="fa-solid fa-bolt" style="color: #00f0ff;"></i> GEMINI FLASH</span>
+                            <span class="engine-title"><i class="fa-solid fa-bolt" style="color: #00f0ff;"></i> GEMINI
+                                FLASH</span>
                             <span class="engine-tag tag-cyan">ULTRA-FAST MULTIMODAL</span>
                         </div>
                         <div class="engine-spec-body">
@@ -125,7 +134,8 @@
                             </div>
                             <div class="engine-pro-con">
                                 <div class="pro-col">
-                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i> Core Strengths</span>
+                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i>
+                                        Core Strengths</span>
                                     <ul>
                                         <li>Blazing execution speeds</li>
                                         <li>Near-zero latency on API handshakes</li>
@@ -133,7 +143,8 @@
                                     </ul>
                                 </div>
                                 <div class="con-col">
-                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i> Constraints</span>
+                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i>
+                                        Constraints</span>
                                     <ul>
                                         <li>Struggles slightly on very complex reasoning</li>
                                     </ul>
@@ -145,7 +156,8 @@
                     <!-- Engine 3: GPT-4o -->
                     <div class="engine-spec-card">
                         <div class="engine-spec-header">
-                            <span class="engine-title"><i class="fa-solid fa-compass" style="color: #10a37f;"></i> GPT-4O</span>
+                            <span class="engine-title"><i class="fa-solid fa-compass" style="color: #10a37f;"></i>
+                                GPT-4O</span>
                             <span class="engine-tag tag-green">CREATIVE BALANCED MATRIX</span>
                         </div>
                         <div class="engine-spec-body">
@@ -163,7 +175,8 @@
                             </div>
                             <div class="engine-pro-con">
                                 <div class="pro-col">
-                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i> Core Strengths</span>
+                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i>
+                                        Core Strengths</span>
                                     <ul>
                                         <li>Superb textual creativity parameters</li>
                                         <li>High compliance with conversational directives</li>
@@ -171,7 +184,8 @@
                                     </ul>
                                 </div>
                                 <div class="con-col">
-                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i> Constraints</span>
+                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i>
+                                        Constraints</span>
                                     <ul>
                                         <li>Premium execution costs</li>
                                         <li>Slightly slower response speed</li>
@@ -184,7 +198,8 @@
                     <!-- Engine 4: Claude Sonnet -->
                     <div class="engine-spec-card">
                         <div class="engine-spec-header">
-                            <span class="engine-title"><i class="fa-solid fa-feather" style="color: #d97706;"></i> CLAUDE SONNET</span>
+                            <span class="engine-title"><i class="fa-solid fa-feather" style="color: #d97706;"></i>
+                                CLAUDE SONNET</span>
                             <span class="engine-tag tag-orange">LITERARY DEEP CODE AUDITOR</span>
                         </div>
                         <div class="engine-spec-body">
@@ -202,7 +217,8 @@
                             </div>
                             <div class="engine-pro-con">
                                 <div class="pro-col">
-                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i> Core Strengths</span>
+                                    <span class="column-title"><i class="fa-solid fa-plus" style="color: #00ff66;"></i>
+                                        Core Strengths</span>
                                     <ul>
                                         <li>Excellent deep coding assessments</li>
                                         <li>High compliance with rigid boundaries/rules</li>
@@ -210,7 +226,8 @@
                                     </ul>
                                 </div>
                                 <div class="con-col">
-                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i> Constraints</span>
+                                    <span class="column-title"><i class="fa-solid fa-minus" style="color: #ff3366;"></i>
+                                        Constraints</span>
                                     <ul>
                                         <li>Highest operational cost</li>
                                         <li>Very conservative safety barriers</li>
@@ -230,8 +247,9 @@
                 </div>
 
                 <!-- Simulation Output Dock (4-Model Parallel Arena) -->
-                <div class="playground-dock split-four" id="playground-dock" style="display: flex; gap: 1rem; flex-grow: 1; overflow-x: auto; padding-bottom: 0.5rem; height: calc(100% - 140px);">
-                    
+                <div class="playground-dock split-four" id="playground-dock"
+                    style="display: flex; gap: 1rem; flex-grow: 1; overflow-x: auto; padding-bottom: 0.5rem; height: calc(100% - 140px);">
+
                     <!-- Column 1: Gemini Flash -->
                     <div class="sim-pane-col" style="flex: 1; min-width: 250px; display: flex; flex-direction: column;">
                         <div class="sim-pane-header" id="pane-flash-header">
@@ -242,7 +260,7 @@
                             <p class="empty-sim-text">Initiate simulation to run parallel audit...</p>
                         </div>
                     </div>
-                    
+
                     <!-- Column 2: Gemini Pro -->
                     <div class="sim-pane-col" style="flex: 1; min-width: 250px; display: flex; flex-direction: column;">
                         <div class="sim-pane-header" id="pane-pro-header">
@@ -268,19 +286,21 @@
                     <!-- Column 4: Claude Sonnet -->
                     <div class="sim-pane-col" style="flex: 1; min-width: 250px; display: flex; flex-direction: column;">
                         <div class="sim-pane-header" id="pane-claude-header">
-                            <span class="engine-badge badge-orange"><i class="fa-solid fa-feather"></i> CLAUDE SONNET</span>
+                            <span class="engine-badge badge-orange"><i class="fa-solid fa-feather"></i> CLAUDE
+                                SONNET</span>
                             <span class="sim-telemetry" id="pane-claude-telemetry">Speed: -- // Cost: --</span>
                         </div>
                         <div class="sim-pane-body" id="pane-claude-output" style="flex: 1; overflow-y: auto;">
                             <p class="empty-sim-text">Initiate simulation to run parallel audit...</p>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- Input area -->
                 <div class="input-area">
-                    <textarea id="playground-input" placeholder="Type prompt to compare model outputs..." rows="3"></textarea>
+                    <textarea id="playground-input" placeholder="Type prompt to compare model outputs..."
+                        rows="3"></textarea>
                     <div class="input-controls">
                         <button id="sim-btn" class="cyber-btn primary-btn">
                             SIMULATE <i class="fa-solid fa-circle-play"></i>
@@ -290,7 +310,7 @@
             </section>
 
         </main>
-        
+
         <!-- Loading overlay -->
         <div id="loading-overlay" class="hidden">
             <div class="spinner"></div>
@@ -301,4 +321,5 @@
     <!-- Script assets -->
     <script src="matrix.js"></script>
 </body>
+
 </html>
