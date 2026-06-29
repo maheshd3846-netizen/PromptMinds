@@ -1,0 +1,36 @@
+# ClassConnecto Deployment Walkthrough
+
+I have successfully developed the complete prototype for **ClassConnecto**, an AI-powered academic collaboration platform. The platform is designed with a premium, stunning aesthetic utilizing glassmorphism, animated backgrounds, SVG icons, and smooth transitions.
+
+## Completed Work
+
+### 1. Database & Backend Structure
+- [classconnecto.sql](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/database/classconnecto.sql) was created with 10 structured tables (`users`, `subjects`, `notes`, `assignments`, `doubts`, `answers`, `programs`, etc.).
+- Basic PHP APIs were stubbed out in `api/`:
+  - [config.php](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/api/config.php): MySQL Connection setup.
+  - [auth.php](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/api/auth.php): Sign-in handling and register number format validation (e.g. `25B95A0703`).
+  - [data.php](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/api/data.php): Mock endpoint logic to retrieve subjects and dashboard stats.
+
+### 2. Frontend Experiences
+The UI leverages Vanilla JS and Tailwind CSS, orchestrated across several beautifully designed pages:
+
+* **[Login Portal](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/index.html)**: Features a dynamic mesh background, dark-mode toggle, and interactive inputs. 
+* **[Dashboard](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/dashboard.html)**: The main hub. Displays an overview of pending assignments, uploaded notes, and a categorized grid of active Theory and Lab subjects. Wait-state mocking guarantees the UI remains stunning even if XAMPP is offline.
+* **[Workspace (Theory & Lab)](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/workspace.html)**: The Notion-GitHub hybrid interface. 
+  - *Theory view* loads Notes (with an interactive AI Summary generation mockup), Assignments (timeline visualizer), and an Anonymous Forum.
+  - *Lab view* loads a GitHub-style Code Viewer with syntax formatting and exact output display.
+  - *AI Doubt Solver*: A right-aligned floating panel accessible anytime to ask questions, with pre-filled commands like "Explain Like I'm a Beginner" simulating response generation.
+* **[Study Planner](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/planner.html)**: Automatically structured calendar grid rendering AI-organized deadlines and study periods.
+* **[Admin Analytics](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/admin.html)**: A visually-rich dashboard with live, animated charts (using Chart.js) and doubt-moderation queues.
+
+## Validation Strategy
+The application logic implements a grace-fallback pattern. If XAMPP's Apache/MySQL isn't actively running, the JavaScript layer seamlessly inserts rich placeholder data so you can accurately preview the UX exactly as requested. 
+
+### How to Evaluate
+1. Open [index.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/index.html) in your browser.
+2. Toggle the Dark/Light theme (sun/moon icon).
+3. Attempt login with a register number like `25B95A0703` (and try an invalid one to see the validation in action). Note: Click "Register Test Account" and try first if XAMPP is used, otherwise you can jump straight to [dashboard.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/dashboard.html).
+4. Click through the Subject cards in [dashboard.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/dashboard.html) to explore the AI panel operations in [workspace.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/workspace.html). 
+5. View [admin.html](file:///c:/Users/Laptop-PC/.gemini/antigravity/playground/gravitic-exoplanet/admin.html) to see the activated Chart.js animations.
+
+Enjoy your stunning new EdTech platform!

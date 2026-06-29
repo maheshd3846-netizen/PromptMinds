@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptMind Vault - Achievements & Prompt Engineering Lore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3D Neural Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="app-container">
+        
+        <!-- Header -->
+        <header class="cyber-header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fa-solid fa-brain"></i>
+                    <h1><span class="neon-text">PROMPT</span>MIND</h1>
+                </div>
+                <p class="tagline">AI THAT TEACHES HUMANS HOW TO THINK</p>
+            </div>
+
+            <!-- Sleek Cyber Nav -->
+            <nav class="cyber-nav">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-terminal"></i> Terminal</a>
+                <a href="matrix.html" class="nav-item"><i class="fa-solid fa-cubes"></i> Model Matrix</a>
+                <a href="achievements.html" class="nav-item active"><i class="fa-solid fa-trophy"></i> Lore & Medals</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="user-greeting" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--border-color); text-transform: uppercase; margin-right: 1.5rem; text-shadow: var(--neon-glow); display: flex; align-items: center; gap: 0.4rem;">
+                    <i class="fa-solid fa-fingerprint"></i> UPLINK: <span id="user-nickname">GUEST</span>
+                </div>
+                <div class="rank-hud" id="rank-hud" title="Your Prompt Architect Rank">
+                    <span class="rank-badge novice" id="rank-badge">NOVICE SCRIBE</span>
+                </div>
+                <div class="audio-controls">
+                    <button id="synth-sound-btn" class="cyber-btn icon-btn active" title="Toggle Synth Sound Effects">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <button id="drone-toggle-btn" class="cyber-btn icon-btn" title="Toggle Cyberpunk Ambient Pad & Chords Synthesizer">
+                        <i class="fa-solid fa-wave-square"></i>
+                    </button>
+                    <button id="ui-scale-btn" class="cyber-btn icon-btn" title="Toggle UI Scale (Normal/Large)">
+                        <i class="fa-solid fa-maximize"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            
+            <!-- LEFT PANEL: Achievements Trophies & Time Machine -->
+            <section class="panel analysis-panel" style="overflow-y: auto;">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-trophy"></i> Cognitive Achievements Vault</h2>
+                </div>
+
+                <!-- User Stats HUD -->
+                <div class="gadget user-stats-hud">
+                    <div class="stat-unit">
+                        <span class="stat-label">COGNITIVE LEVEL:</span>
+                        <span class="stat-value text-neon" id="profile-rank">NOVICE SCRIBE</span>
+                    </div>
+                    <div class="stat-unit">
+                        <span class="stat-label">INTELLIGENCE TROPHIES:</span>
+                        <span class="stat-value" id="trophy-count">0 / 4</span>
+                    </div>
+                </div>
+
+                <!-- Trophy Directory Grid -->
+                <div class="trophy-display-grid">
+                    <div class="trophy-card locked" id="ach-five-fold">
+                        <div class="trophy-icon"><i class="fa-solid fa-dna"></i></div>
+                        <div class="trophy-details">
+                            <h3>Five-Fold DNA</h3>
+                            <p>Inject all five cognitive structural layers: Role, Task, Constraints, Context, and Format blocks.</p>
+                            <span class="trophy-badge-status">LOCKED</span>
+                        </div>
+                    </div>
+                    
+                    <div class="trophy-card locked" id="ach-lexical-purist">
+                        <div class="trophy-icon"><i class="fa-solid fa-broom"></i></div>
+                        <div class="trophy-details">
+                            <h3>Lexical Purist</h3>
+                            <p>Submit and scan an advanced prompt with zero passive or weak lexical word choices.</p>
+                            <span class="trophy-badge-status">LOCKED</span>
+                        </div>
+                    </div>
+
+                    <div class="trophy-card locked" id="ach-quantum">
+                        <div class="trophy-icon"><i class="fa-solid fa-meteor"></i></div>
+                        <div class="trophy-details">
+                            <h3>Prompt Overlord</h3>
+                            <p>Synthesize a perfect prompt sequence achieving a Prompt Intelligence score above 90%.</p>
+                            <span class="trophy-badge-status">LOCKED</span>
+                        </div>
+                    </div>
+
+                    <div class="trophy-card locked" id="ach-vocalizer">
+                        <div class="trophy-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                        <div class="trophy-details">
+                            <h3>Vocalizer</h3>
+                            <p>Transmit a cognitive prompt sequence utilizing Web Speech voice recognition inputs.</p>
+                            <span class="trophy-badge-status">LOCKED</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revisions Time Machine -->
+                <div class="gadget revisions-timeline-vault" style="margin-top: 1.5rem;">
+                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Revisions Time Machine</h3>
+                    <div class="vault-timeline" id="vault-timeline">
+                        <p class="empty-history-text">No prompt scans found in your terminal history database.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: Prompt Engineering Lore Books accordion -->
+            <section class="panel chat-panel" style="overflow-y: auto;">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-book-open"></i> Codex of Prompt Engineering</h2>
+                </div>
+
+                <div class="lore-books-container">
+                    <!-- Book 1: Role-playing -->
+                    <div class="lore-book">
+                        <div class="lore-book-header">
+                            <h3><i class="fa-solid fa-user-ninja" style="color: #ff3366;"></i> CHAPTER I: The Persona Protocol</h3>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="lore-book-body">
+                            <p class="lore-desc">By instructing the AI to roleplay as a highly specialized avatar, you restrict its lexical search space, causing it to use professional vocabulary, relevant design paradigms, and avoid generic conversational filler.</p>
+                            <div class="code-block-container" id="code-lore-1">
+                                <div class="code-block-header">
+                                    <span>Template</span>
+                                    <button class="action-btn copy-btn" onclick="copySnippetText('code-lore-1')" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                                <code class="code-block">Act as a Senior [Expert Title] with 15 years of experience in [Niche Field]. Your background includes [Accomplishments] and you specialize in [Methodologies].</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 2: CoT -->
+                    <div class="lore-book">
+                        <div class="lore-book-header">
+                            <h3><i class="fa-solid fa-network-wired" style="color: #00f0ff;"></i> CHAPTER II: Chain of Thought Reasoning</h3>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="lore-book-body">
+                            <p class="lore-desc">Prompting the model to "think step-by-step" forces the AI to compute linear logical intermediate variables first rather than guessing a response immediately. This raises computation time but yields dramatic logical precision.</p>
+                            <div class="code-block-container" id="code-lore-2">
+                                <div class="code-block-header">
+                                    <span>Template</span>
+                                    <button class="action-btn copy-btn" onclick="copySnippetText('code-lore-2')" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                                <code class="code-block">Before outputting the final result, outline your logic step-by-step. Dedicate a scratchpad block to evaluate variables, assess trade-offs, and detail intermediate calculations.</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 3: Few-shot -->
+                    <div class="lore-book">
+                        <div class="lore-book-header">
+                            <h3><i class="fa-solid fa-diagram-project" style="color: #00ff66;"></i> CHAPTER III: Few-Shot Calibration</h3>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="lore-book-body">
+                            <p class="lore-desc">Models adapt quickly to visual cues. Injecting a few inputs and their ideal target outputs ("Few-shot prompting") calibrates tone, format compliance, and output lengths much more effectively than descriptive words.</p>
+                            <div class="code-block-container" id="code-lore-3">
+                                <div class="code-block-header">
+                                    <span>Template</span>
+                                    <button class="action-btn copy-btn" onclick="copySnippetText('code-lore-3')" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                                <code class="code-block">For context, here are examples of expected outputs:
+Input: [Example Input 1]
+Output: [Example Output 1]
+Input: [Example Input 2]
+Output: [Example Output 2]
+Now, process the active prompt: [Active Prompt]</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book 4: Constraints -->
+                    <div class="lore-book">
+                        <div class="lore-book-header">
+                            <h3><i class="fa-solid fa-shield-halved" style="color: #ffaa00;"></i> CHAPTER IV: Format & Boundaries Grid</h3>
+                            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="lore-book-body">
+                            <p class="lore-desc">Always define strict boundary conditions. What must the AI *never* do? What schema constraints apply? This prevents model drift and ensures the output matches your software architecture pipeline exactly.</p>
+                            <div class="code-block-container" id="code-lore-4">
+                                <div class="code-block-header">
+                                    <span>Template</span>
+                                    <button class="action-btn copy-btn" onclick="copySnippetText('code-lore-4')" title="Copy"><i class="fa-regular fa-copy"></i></button>
+                                </div>
+                                <code class="code-block">OUTPUT CONSTRAINTS:
+1. Provide the response strictly in raw JSON matching the schema: [Schema Detail]
+2. DO NOT include code markdown wrappers (```json) or introductory headers.
+3. If an error occurs, output {"error": "description"} and cease operations.</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Script assets -->
+    <script src="achievements.js"></script>
+</body>
+</html>
