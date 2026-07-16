@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptMind Gateway - Initialize Neural Uplink</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Three.js for 3D Warp Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="entry-body">
+    <!-- Fullscreen Warp Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="entry-shutter-left"></div>
+    <div class="entry-shutter-right"></div>
+
+    <!-- Access Terminal overlay -->
+    <div class="gate-overlay">
+        <div class="gate-modal glass-panel">
+            <div class="gate-header">
+                <i class="fa-solid fa-triangle-exclamation neon-pulse"></i>
+                <h2>PROMPT ARCHITECT GATEWAY</h2>
+                <p class="blink-text text-secondary">AWAITING COGNITIVE SIGNATURE</p>
+            </div>
+
+            <!-- Diagnostics Console -->
+            <div class="diagnostic-console" id="diag-console">
+                <!-- Telemetry logs written dynamically by entry.js -->
+            </div>
+
+            <!-- Access Input Area -->
+            <div class="gate-auth-area">
+                <div class="input-glow-wrapper">
+                    <input type="text" id="gate-alias" placeholder="ENTER ALIAS (E.G. NEO, ARCHITECT)..." maxlength="15" autocomplete="off">
+                </div>
+                
+                <div class="gate-controls">
+                    <button id="gate-sound-btn" class="cyber-btn" title="Toggle Sound FX">
+                        <i class="fa-solid fa-volume-high"></i> SOUND: ON
+                    </button>
+                    <button id="uplink-btn" class="cyber-btn primary-btn">
+                        ESTABLISH UPLINK <i class="fa-solid fa-bolt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="gate-footer">
+                <p>SYSTEM ACCESS LEVEL: COGNITIVE OVERLORD // SECURE SSH PORT 3000</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cinematic entry JS -->
+    <script src="entry.js"></script>
+</body>
+</html>
