@@ -943,7 +943,11 @@ function localInjectBlock(prompt, blockType) {
   return "ADDITIONAL COGNITIVE OVERLAY SEGMENT.";
 }
 
-app.listen(PORT, () => {
-  console.log(`PromptMind server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`PromptMind server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
 
