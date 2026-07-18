@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const { GoogleGenAI } = require('@google/genai');
 
 const app = express();
@@ -9,7 +10,21 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public', { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+
+// Explicit routing for login page & other core screens (Vercel serverless helper)
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+});
+app.get('/achievements', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'achievements.html'));
+});
+app.get('/matrix', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'matrix.html'));
+});
 
 // Configure Gemini
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
