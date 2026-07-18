@@ -10,20 +10,20 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
+app.use(express.static(path.join(__dirname, '..', 'public'), { extensions: ['html'] }));
 
 // Explicit routing for login page & other core screens (Vercel serverless helper)
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'), { dotfiles: 'allow' });
 });
 app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'dashboard.html'), { dotfiles: 'allow' });
 });
 app.get('/achievements', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'achievements.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'achievements.html'), { dotfiles: 'allow' });
 });
 app.get('/matrix', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'matrix.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'matrix.html'), { dotfiles: 'allow' });
 });
 
 // Configure Gemini
